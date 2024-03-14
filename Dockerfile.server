@@ -1,0 +1,18 @@
+FROM node:16
+
+WORKDIR /app/server
+COPY server ./
+
+RUN npm install
+
+# WORKDIR /app
+
+# FROM node:14
+
+# WORKDIR /app/server
+
+# COPY --from=builder /app/server .
+
+EXPOSE 5000
+
+CMD ["npm", "run", "start"]
